@@ -60,7 +60,7 @@ a{color:inherit}
 /* Hero: full-bleed video, headline bottom-left */
 .hero{position:relative;min-height:clamp(520px,calc(100svh - var(--nav-h)),900px);display:flex;align-items:flex-end;overflow:hidden;
   background:#2a2622 radial-gradient(80% 90% at 70% 40%,#5a4a3b,#1d1a17)}
-.hero__media{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:62% 50%}
+.hero__media{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:72% 50%}
 .hero__shade{position:absolute;inset:0;background:
   linear-gradient(90deg,rgba(15,13,11,.62) 0%,rgba(15,13,11,.25) 45%,transparent 70%),
   linear-gradient(0deg,rgba(15,13,11,.6) 0%,transparent 55%)}
@@ -81,6 +81,15 @@ a{color:inherit}
 .facts dt{font-size:.85rem;color:var(--muted)}
 .facts dd{margin:4px 0 0;font:800 1.9rem/1.1 var(--f-display);font-variant-numeric:tabular-nums}
 @media (max-width:860px){.intro__grid{grid-template-columns:1fr}}
+
+/* Gallery */
+.gallery{padding-block:clamp(40px,6vw,72px) 0}
+.gallery__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.gallery figure{margin:0;position:relative;overflow:hidden;border-radius:12px;aspect-ratio:4/3;background:var(--panel)}
+.gallery img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease-out)}
+.gallery figure:hover img{transform:scale(1.04)}
+.gallery figcaption{position:absolute;left:14px;bottom:12px;padding:6px 12px;border-radius:999px;background:rgba(251,250,247,.92);font-size:.85rem;font-weight:500}
+@media (max-width:760px){.gallery__grid{grid-template-columns:1fr 1fr}.gallery figure:first-child{grid-column:1/-1}}
 
 /* How it works */
 .how{padding-block:clamp(64px,9vw,112px)}

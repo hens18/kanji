@@ -19,7 +19,11 @@ Live preview link: https://claude.ai/artifact/MMwJLygHTGuRkTasgnw4iZ (private un
 - Name on their site: "Kanji Sushi & Bar (Springfield)". Yelp/Instagram use "Kanji Sushi AYCE".
 - 8430-A Old Keene Mill Rd, Springfield, VA 22152 · (703) 563-1078
 - Hours (from their site): Sun-Thu 12-10 PM, Fri-Sat 12-11 PM. Source of truth: `HOURS` in `site/assets/main.js`.
-- Order Online currently lives on the old site (Go3 Technology); the new site links there.
+- Order Online: https://order.tastyfuture.com/menu?store=2714485465345 (from their site).
+- Google Maps: https://maps.app.goo.gl/E62i17QUfP6FbHxg9
+- Their site links Yelp listing `kanji-sushi-and-bar-west-springfield-2`; the reviews we use come from `kanji-sushi-ayce-west-springfield`.
+- Photos in `site/assets/` come from kanjispringfield.com (s3.ezordernow.com). They look like platform stock photos,
+  only 1000px wide; replace with the restaurant's own shots when available. Yelp blocks automated downloads (403).
 - Socials: Instagram @kanjisushiandbar_springfield, Facebook, Yelp, Snapchat place page (links in footer).
 - NEEDS OWNER CONFIRMATION: AYCE prices ($30 adult, $15 kids 7-11, $12 kids 4-6, 3 and under free)
   and the 90-minute seating limit come from a 2024 TikTok, not the restaurant.
@@ -28,7 +32,7 @@ Live preview link: https://claude.ai/artifact/MMwJLygHTGuRkTasgnw4iZ (private un
 
 - Minimal sushi-restaurant look, modeled on Nobu Miami, Tanuki Miami and Yume Sushi Bar: plain white nav,
   full-bleed hero photo/video with headline bottom-left, clean light sections, one deep red accent.
-- Hero: a photo from kanjispringfield.com for now (`site/assets/hero.jpg`).
+- Hero: nigiri photo from kanjispringfield.com, mirrored (`site/assets/hero.jpg`).
 - Planned hero video (Higgsfield): a PLAIN SALMON ROLL only, no other fillings, sliced with a Japanese
   yanagiba in one long horizontal pulling stroke (never a straight-down chop). Start frame must use
   `quality: "high"`, `resolution: "2k"`; the default low/1k frame caused the grainy rice.
@@ -37,5 +41,5 @@ Live preview link: https://claude.ai/artifact/MMwJLygHTGuRkTasgnw4iZ (private un
 ## Layout
 
 - `site/index.html` + `site/assets/` : plain HTML/CSS/vanilla JS, no build step (per the 10k-websites skill).
-  `reviews.css` holds the design tokens, `site.css` the sections, `main.js` hero shuttle/tabs/hours, `reviews.js` the review data and belt.
+  `reviews.css` holds the design tokens, `site.css` the sections, `main.js` hero fallback/tabs/hours, `reviews.js` the review data and belt.
 - `10k-websites-skill (1).zip` : design skill used for critique and build standards. Keep it out of `site/`.
