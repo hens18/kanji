@@ -12,7 +12,7 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23b3261e'/%3E%3Ctext x='16' y='23' font-size='18' text-anchor='middle' fill='%23fbfaf7' font-family='serif'%3E%E6%BC%A2%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Shippori+Mincho:wght@600;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/site.css">
   <link rel="stylesheet" href="assets/reviews.css">
 </head>
@@ -75,62 +75,464 @@
       </div>
     </section>
 
-    <section class="how" aria-labelledby="how-title">
-      <div class="wrap">
-        <h2 class="h2" id="how-title">How it works</h2>
-        <ol class="steps">
-          <li><span class="step__n">01</span><h3>Grab a seat</h3><p>Booth or bar. Go all you can eat, or order à la carte.</p></li>
-          <li><span class="step__n">02</span><h3>Graze the belt</h3><p>Light bites roll past on the conveyor. Take what looks good.</p></li>
-          <li><span class="step__n">03</span><h3>Order anything</h3><p>Rolls, nigiri, hibachi, takoyaki. Ask your server each round.</p></li>
-          <li><span class="step__n">04</span><h3>Watch it arrive</h3><p>Your order rides the shuttle rail straight to your table.</p></li>
-        </ol>
-      </div>
-    </section>
 
     <section class="menu" id="menu" aria-labelledby="menu-title">
-      <div class="wrap menu__grid">
-        <div>
-          <h2 class="h2" id="menu-title">The menu</h2>
-          <p class="muted menu__note">Sushi bar, kitchen and hibachi grill, all inside one price. The full menu is at the restaurant and changes with the season.</p>
+      <div class="wrap">
+        <div class="menu__head">
+          <h2 class="menu__title" id="menu-title">The Menu</h2>
+          <p class="muted menu__note">À la carte prices. All you can eat is available too, just ask your server. <span class="raw" aria-hidden="true"></span> marks raw fish.</p>
         </div>
-        <div>
-          <div class="tabs" role="tablist" aria-label="Menu categories">
-            <button role="tab" id="tab-sushi" aria-controls="panel-sushi" aria-selected="true">Sushi &amp; rolls</button>
-            <button role="tab" id="tab-sashimi" aria-controls="panel-sashimi" aria-selected="false" tabindex="-1">Sashimi</button>
-            <button role="tab" id="tab-hibachi" aria-controls="panel-hibachi" aria-selected="false" tabindex="-1">Hibachi &amp; kitchen</button>
-            <button role="tab" id="tab-small" aria-controls="panel-small" aria-selected="false" tabindex="-1">Small plates</button>
-          </div>
-          <div class="tabpanel" role="tabpanel" id="panel-sushi" aria-labelledby="tab-sushi" tabindex="0">
-            <ul class="dishes">
-              <li><span class="dish__name">Nigiri</span><span class="dish__note">Salmon, tuna, tamago, shrimp and more</span></li>
-              <li><span class="dish__name">Crunchy salmon roll</span><span class="dish__note">A regular favorite</span></li>
-              <li><span class="dish__name">Hand rolls</span><span class="dish__note">Rolled fresh when you order</span></li>
-              <li><span class="dish__name">Classic and house rolls</span><span class="dish__note">The standards, done right</span></li>
+        <div class="tabs" role="tablist" aria-label="Menu categories">
+            <button role="tab" id="tab-starters" aria-controls="panel-starters" aria-selected="true">Soup, salad &amp; kitchen</button>
+            <button role="tab" id="tab-bar-apps" aria-controls="panel-bar-apps" aria-selected="false" tabindex="-1">Sushi bar starters</button>
+            <button role="tab" id="tab-nigiri" aria-controls="panel-nigiri" aria-selected="false" tabindex="-1">Sushi &amp; sashimi</button>
+            <button role="tab" id="tab-entrees" aria-controls="panel-entrees" aria-selected="false" tabindex="-1">Sushi bar entrées</button>
+            <button role="tab" id="tab-classic" aria-controls="panel-classic" aria-selected="false" tabindex="-1">Classic &amp; hand rolls</button>
+            <button role="tab" id="tab-special" aria-controls="panel-special" aria-selected="false" tabindex="-1">Special rolls</button>
+        </div>
+        <div class="tabpanel" role="tabpanel" id="panel-starters" aria-labelledby="tab-starters" tabindex="0">
+          <div class="menu__group">
+            <h3 class="menu__group-title">Soup</h3>
+            <ul class="items">
+              <li class="item">
+                <p class="item__row"><span class="item__name">Miso Soup</span><span class="item__price">3</span></p>
+              </li>
             </ul>
           </div>
-          <div class="tabpanel" role="tabpanel" id="panel-sashimi" aria-labelledby="tab-sashimi" tabindex="0" hidden>
-            <ul class="dishes">
-              <li><span class="dish__name">Sashimi sampler</span><span class="dish__note">One per guest, included</span></li>
-              <li><span class="dish__name">Extra sashimi</span><span class="dish__note">Small surcharge</span></li>
-              <li><span class="dish__name">Sliced fish with jalapeño</span><span class="dish__note">Thin cuts, jalapeño and radish</span></li>
+          <div class="menu__group">
+            <h3 class="menu__group-title">Salad</h3>
+            <ul class="items">
+              <li class="item">
+                <p class="item__row"><span class="item__name">House Salad</span><span class="item__price">3</span></p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Seaweed Salad</span><span class="item__price">6</span></p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Spicy Kani Salad</span><span class="item__price">7</span></p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Avocado Salad</span><span class="item__price">6</span></p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Shrimp Mango Salad</span><span class="item__price">7</span></p>
+                <p class="item__desc">Cooked shrimp, mango and green mix with mango sauce</p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Salmon Skin Salad</span><span class="item__price">7</span></p>
+                <p class="item__desc">Crispy baked salmon skin chips with green mix</p>
+              </li>
             </ul>
           </div>
-          <div class="tabpanel" role="tabpanel" id="panel-hibachi" aria-labelledby="tab-hibachi" tabindex="0" hidden>
-            <ul class="dishes">
-              <li><span class="dish__name">Hibachi</span><span class="dish__note">Tender grilled meats</span></li>
-              <li><span class="dish__name">Teriyaki</span><span class="dish__note">Glazed and grilled</span></li>
-              <li><span class="dish__name">Tempura</span><span class="dish__note">Light, crisp batter</span></li>
-              <li><span class="dish__name">Noodles</span><span class="dish__note">Hot bowls from the kitchen</span></li>
-            </ul>
-          </div>
-          <div class="tabpanel" role="tabpanel" id="panel-small" aria-labelledby="tab-small" tabindex="0" hidden>
-            <ul class="dishes">
-              <li><span class="dish__name">Takoyaki</span><span class="dish__note">Yes, they have takoyaki</span></li>
-              <li><span class="dish__name">Appetizers</span><span class="dish__note">A full list to start with</span></li>
-              <li><span class="dish__name">Belt bites</span><span class="dish__note">Grab from the conveyor anytime</span></li>
+          <div class="menu__group">
+            <h3 class="menu__group-title">Appetizers from the kitchen</h3>
+            <ul class="items">
+              <li class="item">
+                <p class="item__row"><span class="item__name">Edamame</span><span class="item__price">6</span></p>
+                <p class="item__desc">Boiled soybeans with salt</p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Harumaki</span><span class="item__price">5.5</span></p>
+                <p class="item__desc">Vegetable spring roll</p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Shrimp Shumai</span><span class="item__price">7</span></p>
+                <p class="item__desc">6 steamed or deep-fried shrimp dumplings with dumpling sauce</p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Age Tofu</span><span class="item__price">6</span></p>
+                <p class="item__desc">Deep-fried tofu with tempura sauce</p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Gyoza</span><span class="item__price">7</span></p>
+                <p class="item__desc">6 pan-fried pork dumplings</p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Takoyaki</span><span class="item__price">9</span></p>
+                <p class="item__desc">6 deep-fried octopus balls with Japanese mayo, takoyaki sauce and fish flakes</p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Shrimp Tempura</span><span class="item__price">8.5</span></p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Chicken Tempura</span><span class="item__price">8.5</span></p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Vegetable Tempura</span><span class="item__price">7.5</span></p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Crab Rangoon</span><span class="item__price">6</span></p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Fried Chicken Wings</span><span class="item__price">9</span></p>
+                <p class="item__desc">6 pieces</p>
+              </li>
             </ul>
           </div>
         </div>
+        <div class="tabpanel" role="tabpanel" id="panel-bar-apps" aria-labelledby="tab-bar-apps" tabindex="0" hidden>
+          <div class="menu__group">
+            <h3 class="menu__group-title">Appetizers from the sushi bar</h3>
+            <ul class="items">
+              <li class="item">
+                <p class="item__row"><span class="item__name">Sushi Apps<span class="raw" title="Contains raw fish"><span class="sr-only">Contains raw fish</span></span></span><span class="item__price">12</span></p>
+                <p class="item__desc">5 pieces of chef&#x27;s choice assorted fish</p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Sashimi Apps<span class="raw" title="Contains raw fish"><span class="sr-only">Contains raw fish</span></span></span><span class="item__price">12</span></p>
+                <p class="item__desc">5 pieces of chef&#x27;s choice assorted fish</p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Pepper Tuna Tataki<span class="raw" title="Contains raw fish"><span class="sr-only">Contains raw fish</span></span></span><span class="item__price">12</span></p>
+                <p class="item__desc">Black pepper tuna with ponzu sauce</p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Tuna and Salmon Tartare<span class="raw" title="Contains raw fish"><span class="sr-only">Contains raw fish</span></span></span><span class="item__price">12</span></p>
+                <p class="item__desc">Chunky tuna and salmon with avocado, scallions, masago and ponzu sauce</p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Yellowtail Jalapeño<span class="raw" title="Contains raw fish"><span class="sr-only">Contains raw fish</span></span></span><span class="item__price">12</span></p>
+                <p class="item__desc">Sliced yellowtail with jalapeño and ponzu sauce</p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Salmon Midori<span class="raw" title="Contains raw fish"><span class="sr-only">Contains raw fish</span></span></span><span class="item__price">12</span></p>
+                <p class="item__desc">Salmon wrapped around cucumber and spicy kani, tobiko, special sauce</p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Sexy Jalapeño<span class="raw" title="Contains raw fish"><span class="sr-only">Contains raw fish</span></span></span><span class="item__price">12</span></p>
+                <p class="item__desc">Deep-fried jalapeño with cream cheese and spicy tuna inside, spicy sauce on top</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="tabpanel" role="tabpanel" id="panel-nigiri" aria-labelledby="tab-nigiri" tabindex="0" hidden>
+          <div class="menu__group">
+            <h3 class="menu__group-title">À la carte sushi or sashimi · 2 pieces per order</h3>
+            <ul class="items">
+              <li class="item">
+                <p class="item__row"><span class="item__name">Egg Omelette (Tamago)</span><span class="item__price">5</span></p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Crab Stick (Kani)</span><span class="item__price">5</span></p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Shrimp (Ebi)</span><span class="item__price">5</span></p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Surf Clam (Hokkigai)</span><span class="item__price">5.5</span></p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Red Snapper (Tai)<span class="raw" title="Contains raw fish"><span class="sr-only">Contains raw fish</span></span></span><span class="item__price">6</span></p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Mackerel (Saba)<span class="raw" title="Contains raw fish"><span class="sr-only">Contains raw fish</span></span></span><span class="item__price">5</span></p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Salmon (Sake)<span class="raw" title="Contains raw fish"><span class="sr-only">Contains raw fish</span></span></span><span class="item__price">6</span></p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Squid (Ika)<span class="raw" title="Contains raw fish"><span class="sr-only">Contains raw fish</span></span></span><span class="item__price">5</span></p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">White Tuna (Escolar)<span class="raw" title="Contains raw fish"><span class="sr-only">Contains raw fish</span></span></span><span class="item__price">6.5</span></p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Octopus (Tako)</span><span class="item__price">5.5</span></p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Flying Fish Roe (Tobiko)<span class="raw" title="Contains raw fish"><span class="sr-only">Contains raw fish</span></span></span><span class="item__price">6</span></p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Yellowtail (Hamachi)<span class="raw" title="Contains raw fish"><span class="sr-only">Contains raw fish</span></span></span><span class="item__price">6.5</span></p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Smoked Salmon<span class="raw" title="Contains raw fish"><span class="sr-only">Contains raw fish</span></span></span><span class="item__price">5.5</span></p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Tuna (Maguro)<span class="raw" title="Contains raw fish"><span class="sr-only">Contains raw fish</span></span></span><span class="item__price">6.5</span></p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Eel (Unagi)</span><span class="item__price">6.5</span></p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Scallop (Hotategai)<span class="raw" title="Contains raw fish"><span class="sr-only">Contains raw fish</span></span></span><span class="item__price">7.5</span></p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Tofu Skin (Inari)</span><span class="item__price">5</span></p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Masago (Smelt Roe)<span class="raw" title="Contains raw fish"><span class="sr-only">Contains raw fish</span></span></span><span class="item__price">5</span></p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Striped Bass (Suzuki)<span class="raw" title="Contains raw fish"><span class="sr-only">Contains raw fish</span></span></span><span class="item__price">6</span></p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="tabpanel" role="tabpanel" id="panel-entrees" aria-labelledby="tab-entrees" tabindex="0" hidden>
+          <div class="menu__group">
+            <h3 class="menu__group-title">Served with soup or salad</h3>
+            <ul class="items">
+              <li class="item">
+                <p class="item__row"><span class="item__name">Maki Combo Dinner<span class="raw" title="Contains raw fish"><span class="sr-only">Contains raw fish</span></span></span><span class="item__price">17</span></p>
+                <p class="item__desc">California roll, tuna roll and salmon roll</p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Spicy Maki Combo Dinner<span class="raw" title="Contains raw fish"><span class="sr-only">Contains raw fish</span></span></span><span class="item__price">19</span></p>
+                <p class="item__desc">Spicy tuna, spicy salmon and spicy yellowtail rolls</p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Sushi Dinner<span class="raw" title="Contains raw fish"><span class="sr-only">Contains raw fish</span></span></span><span class="item__price">23</span></p>
+                <p class="item__desc">Chef&#x27;s choice of 10 pieces of sushi and a California roll</p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Sashimi Dinner<span class="raw" title="Contains raw fish"><span class="sr-only">Contains raw fish</span></span></span><span class="item__price">32</span></p>
+                <p class="item__desc">Chef&#x27;s choice of 15 pieces of sashimi with sushi rice</p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Chirashi Sushi<span class="raw" title="Contains raw fish"><span class="sr-only">Contains raw fish</span></span></span><span class="item__price">26</span></p>
+                <p class="item__desc">Chef&#x27;s choice of 12 pieces of sashimi over sushi rice</p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Tri Color Sashimi<span class="raw" title="Contains raw fish"><span class="sr-only">Contains raw fish</span></span></span><span class="item__price">30</span></p>
+                <p class="item__desc">4 pieces each of tuna, salmon and yellowtail with white rice</p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Tri Color Sushi<span class="raw" title="Contains raw fish"><span class="sr-only">Contains raw fish</span></span></span><span class="item__price">25</span></p>
+                <p class="item__desc">3 pieces each of tuna, salmon and yellowtail and one tuna roll</p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Unagi Don</span><span class="item__price">22</span></p>
+                <p class="item__desc">Broiled sliced eel over sushi rice with eel sauce</p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Sushi &amp; Sashimi Combo<span class="raw" title="Contains raw fish"><span class="sr-only">Contains raw fish</span></span></span><span class="item__price">34</span></p>
+                <p class="item__desc">Chef&#x27;s choice of 5 pieces of sushi, 9 pieces of sashimi and a spicy tuna roll</p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Love Boat for Two<span class="raw" title="Contains raw fish"><span class="sr-only">Contains raw fish</span></span></span><span class="item__price">78</span></p>
+                <p class="item__desc">Chef&#x27;s choice of 12 pieces of sushi, 18 pieces of sashimi and two special rolls</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="tabpanel" role="tabpanel" id="panel-classic" aria-labelledby="tab-classic" tabindex="0" hidden>
+          <div class="menu__group">
+            <h3 class="menu__group-title">Raw maki</h3>
+            <ul class="items">
+              <li class="item">
+                <p class="item__row"><span class="item__name">Salmon Roll<span class="raw" title="Contains raw fish"><span class="sr-only">Contains raw fish</span></span></span><span class="item__price">6</span></p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Spicy Tuna Roll<span class="raw" title="Contains raw fish"><span class="sr-only">Contains raw fish</span></span></span><span class="item__price">7</span></p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Tuna Roll<span class="raw" title="Contains raw fish"><span class="sr-only">Contains raw fish</span></span></span><span class="item__price">6.5</span></p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Spicy Salmon Roll<span class="raw" title="Contains raw fish"><span class="sr-only">Contains raw fish</span></span></span><span class="item__price">7</span></p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Alaska Roll<span class="raw" title="Contains raw fish"><span class="sr-only">Contains raw fish</span></span></span><span class="item__price">7</span></p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">White Tuna Roll<span class="raw" title="Contains raw fish"><span class="sr-only">Contains raw fish</span></span></span><span class="item__price">6.5</span></p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Spicy Yellowtail Roll<span class="raw" title="Contains raw fish"><span class="sr-only">Contains raw fish</span></span></span><span class="item__price">7</span></p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Yellowtail Roll<span class="raw" title="Contains raw fish"><span class="sr-only">Contains raw fish</span></span></span><span class="item__price">7</span></p>
+                <p class="item__desc">With scallion or jalapeño</p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Tuna Avocado Roll<span class="raw" title="Contains raw fish"><span class="sr-only">Contains raw fish</span></span></span><span class="item__price">7.5</span></p>
+                <p class="item__desc">With avocado or cucumber</p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Salmon Avocado Roll<span class="raw" title="Contains raw fish"><span class="sr-only">Contains raw fish</span></span></span><span class="item__price">7</span></p>
+                <p class="item__desc">With avocado or cucumber</p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Spicy Scallop Roll<span class="raw" title="Contains raw fish"><span class="sr-only">Contains raw fish</span></span></span><span class="item__price">8.5</span></p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Philadelphia Roll<span class="raw" title="Contains raw fish"><span class="sr-only">Contains raw fish</span></span></span><span class="item__price">7</span></p>
+                <p class="item__desc">Smoked salmon, cream cheese, avocado</p>
+              </li>
+            </ul>
+          </div>
+          <div class="menu__group">
+            <h3 class="menu__group-title">Cooked maki</h3>
+            <ul class="items">
+              <li class="item">
+                <p class="item__row"><span class="item__name">Spicy Shrimp Roll</span><span class="item__price">7</span></p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">California Roll</span><span class="item__price">6.5</span></p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Salmon Skin Roll</span><span class="item__price">6.5</span></p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Boston Roll</span><span class="item__price">6.5</span></p>
+                <p class="item__desc">Cucumber, shrimp, lettuce and mayo</p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Shrimp Avocado Roll</span><span class="item__price">7</span></p>
+                <p class="item__desc">With avocado or cucumber</p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Eel Cucumber or Avocado Roll</span><span class="item__price">7.5</span></p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Chicken Tempura Roll</span><span class="item__price">7.5</span></p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Shrimp Tempura Roll</span><span class="item__price">7.5</span></p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Spider Roll</span><span class="item__price">10</span></p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Futo Maki Roll</span><span class="item__price">7.5</span></p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Spicy Crab Roll</span><span class="item__price">7</span></p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Spicy California Roll</span><span class="item__price">7</span></p>
+              </li>
+            </ul>
+          </div>
+          <div class="menu__group">
+            <h3 class="menu__group-title">Vegetable maki</h3>
+            <ul class="items">
+              <li class="item">
+                <p class="item__row"><span class="item__name">Avocado Roll</span><span class="item__price">6</span></p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Asparagus Roll</span><span class="item__price">5</span></p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Cucumber Roll</span><span class="item__price">5</span></p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Oshinko Roll</span><span class="item__price">5</span></p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Sweet Potato Roll</span><span class="item__price">5.5</span></p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">A.A.C. Roll</span><span class="item__price">6.5</span></p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Peanut Avocado Roll</span><span class="item__price">5.5</span></p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="tabpanel" role="tabpanel" id="panel-special" aria-labelledby="tab-special" tabindex="0" hidden>
+          <div class="menu__group">
+            <h3 class="menu__group-title">Raw</h3>
+            <ul class="items">
+              <li class="item">
+                <p class="item__row"><span class="item__name">Rainbow Roll<span class="raw" title="Contains raw fish"><span class="sr-only">Contains raw fish</span></span></span><span class="item__price">14</span></p>
+                <p class="item__desc">Crabmeat, avocado and cucumber inside, topped with tuna, salmon, white fish and avocado</p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Incredible Roll<span class="raw" title="Contains raw fish"><span class="sr-only">Contains raw fish</span></span></span><span class="item__price">17</span></p>
+                <p class="item__desc">Tuna, salmon, yellowtail and avocado wrapped in soybean paper, with eel sauce and spicy mayo</p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Midnight in Tokyo Roll<span class="raw" title="Contains raw fish"><span class="sr-only">Contains raw fish</span></span></span><span class="item__price">16</span></p>
+                <p class="item__desc">Spicy tuna and avocado inside, topped with fresh tuna, crunch and red tobiko, with eel sauce and wasabi sauce</p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Honeymoon Roll<span class="raw" title="Contains raw fish"><span class="sr-only">Contains raw fish</span></span></span><span class="item__price">16</span></p>
+                <p class="item__desc">Spicy salmon inside, topped with tuna, salmon and avocado, with spicy mayo and wasabi sauce</p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Old Keene Mill Roll<span class="raw" title="Contains raw fish"><span class="sr-only">Contains raw fish</span></span></span><span class="item__price">15</span></p>
+                <p class="item__desc">Shrimp tempura and cucumber inside, topped with spicy crunchy tuna, eel sauce and spicy mayo</p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Salmon Lover Roll<span class="raw" title="Contains raw fish"><span class="sr-only">Contains raw fish</span></span></span><span class="item__price">15</span></p>
+                <p class="item__desc">Spicy salmon, crab meat and cucumber inside, topped with fresh salmon, eel sauce and crunch</p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Autumn of VA Roll<span class="raw" title="Contains raw fish"><span class="sr-only">Contains raw fish</span></span></span><span class="item__price">16</span></p>
+                <p class="item__desc">Salmon, spicy tuna and asparagus inside, topped with white tuna, with spicy mayo</p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Golden Spider Roll<span class="raw" title="Contains raw fish"><span class="sr-only">Contains raw fish</span></span></span><span class="item__price">17</span></p>
+                <p class="item__desc">Soft shell crab tempura and avocado inside, topped with spicy salmon, eel sauce and spicy mayo</p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Naruto Roll<span class="raw" title="Contains raw fish"><span class="sr-only">Contains raw fish</span></span></span><span class="item__price">14</span></p>
+                <p class="item__desc">Tuna, salmon, crab stick or yellowtail with avocado and tobiko, wrapped in sliced cucumber with ponzu sauce</p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Hot Girl Roll<span class="raw" title="Contains raw fish"><span class="sr-only">Contains raw fish</span></span></span><span class="item__price">15</span></p>
+                <p class="item__desc">Tuna, avocado and cucumber inside, topped with spicy yellowtail, jalapeño and sriracha</p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Great Falls Roll<span class="raw" title="Contains raw fish"><span class="sr-only">Contains raw fish</span></span></span><span class="item__price">15</span></p>
+                <p class="item__desc">Shrimp tempura and avocado inside, topped with pepper tuna, avocado, masago, eel sauce and wasabi mayo</p>
+              </li>
+            </ul>
+          </div>
+          <div class="menu__group">
+            <h3 class="menu__group-title">Cooked</h3>
+            <ul class="items">
+              <li class="item">
+                <p class="item__row"><span class="item__name">Kanji Roll</span><span class="item__price">18</span></p>
+                <p class="item__desc">Lobster salad, steamed shrimp, crab meat, cream cheese and avocado in soybean paper, with eel sauce and spicy mayo</p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Green River Roll</span><span class="item__price">15</span></p>
+                <p class="item__desc">Shrimp tempura and cheese inside, topped with spicy crab, avocado, eel sauce and spicy mayo</p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">TNT Roll</span><span class="item__price">16</span></p>
+                <p class="item__desc">Salmon, eel, shrimp, avocado and cucumber, fried crispy, with eel sauce and spicy mayo</p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Crunchy Spicy Tuna, Salmon or Kani Tempura Roll</span><span class="item__price">13</span></p>
+                <p class="item__desc">Spicy tuna, salmon or kani with avocado and cream cheese, fried crispy, with spicy mayo and eel sauce</p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Dragon Roll</span><span class="item__price">14</span></p>
+                <p class="item__desc">Eel and cucumber inside, topped with avocado and eel sauce</p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Black Dragon Roll</span><span class="item__price">16</span></p>
+                <p class="item__desc">Shrimp tempura and cucumber, topped with eel, avocado and eel sauce</p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Snow Mountain Roll</span><span class="item__price">15</span></p>
+                <p class="item__desc">Shrimp tempura and cream cheese, topped with crab meat, mayo and mango sauce</p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Dark Angel Roll</span><span class="item__price">16</span></p>
+                <p class="item__desc">Spicy kani and avocado inside, topped with eel and eel sauce</p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Pikachu Roll</span><span class="item__price">15</span></p>
+                <p class="item__desc">Shrimp tempura and avocado, topped with sliced mango and mango sauce</p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">Sunrise Highway Roll</span><span class="item__price">15</span></p>
+                <p class="item__desc">Sweet potato tempura, avocado and cream cheese, topped with spicy kani and eel sauce</p>
+              </li>
+              <li class="item">
+                <p class="item__row"><span class="item__name">American Dream Roll</span><span class="item__price">15</span></p>
+                <p class="item__desc">Fried banana and shrimp tempura in soybean paper, with mango sauce and spicy mayo</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <p class="menu__advisory">Consuming raw or undercooked meats, poultry, seafood, shellfish or eggs may increase your risk of foodborne illness.</p>
       </div>
     </section>
 

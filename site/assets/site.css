@@ -91,34 +91,33 @@ a{color:inherit}
 .gallery figcaption{position:absolute;left:14px;bottom:12px;padding:6px 12px;border-radius:999px;background:rgba(251,250,247,.92);font-size:.85rem;font-weight:500}
 @media (max-width:760px){.gallery__grid{grid-template-columns:1fr 1fr}.gallery figure:first-child{grid-column:1/-1}}
 
-/* How it works */
-.how{padding-block:clamp(64px,9vw,112px)}
-.steps{list-style:none;margin:36px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:0}
-.steps li{padding:0 28px 0 0;border-left:1px solid var(--line);padding-left:24px}
-.steps li:first-child{border-left:0;padding-left:0}
-.step__n{display:block;font:600 .95rem/1 var(--f-display);color:var(--accent);margin-bottom:18px;letter-spacing:.1em}
-.steps h3{margin:0 0 8px;font:700 1.15rem/1.3 var(--f-body)}
-.steps p{margin:0;color:var(--muted);max-width:28ch}
-@media (max-width:860px){.steps{grid-template-columns:1fr 1fr;row-gap:36px}.steps li:nth-child(3){border-left:0;padding-left:0}}
-@media (max-width:520px){.steps{grid-template-columns:1fr}.steps li{border-left:0;padding-left:0;border-top:1px solid var(--line);padding-top:20px}.steps li:first-child{border-top:0;padding-top:0}}
-
 /* Menu */
 .menu{padding-block:clamp(64px,9vw,112px);background:var(--panel)}
-.menu__grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(28px,6vw,96px);align-items:start}
-.menu__note{max-width:38ch}
-.tabs{display:flex;flex-wrap:wrap;gap:4px 24px;border-bottom:1px solid var(--line);margin-bottom:8px}
-.tabs button{background:none;border:0;cursor:pointer;padding:12px 0;min-height:44px;font:500 1rem/1 var(--f-body);color:var(--muted);position:relative;transition:color .3s var(--ease-soft)}
+.menu__head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px 40px;margin-bottom:28px}
+.menu__title{margin:0;font:400 clamp(3rem,9vw,6.5rem)/1.05 "Dela Gothic One","Shippori Mincho",Impact,sans-serif;
+  text-transform:uppercase;letter-spacing:.04em;color:var(--ink)}
+.menu__title::first-letter{color:var(--accent)}
+.menu__note{margin:0;max-width:44ch}
+.tabs{display:flex;flex-wrap:wrap;gap:4px 28px;border-bottom:1px solid var(--line);margin-bottom:36px}
+.tabs button{background:none;border:0;cursor:pointer;padding:14px 0;min-height:44px;font:500 1rem/1 var(--f-body);color:var(--muted);position:relative;transition:color .3s var(--ease-soft)}
 .tabs button::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--accent);transform:scaleX(0);transition:transform .35s var(--ease-out)}
-.tabs button:hover{color:var(--ink)}
-.tabs button[aria-selected="true"]{color:var(--ink)}
+.tabs button:hover,.tabs button[aria-selected="true"]{color:var(--ink)}
 .tabs button[aria-selected="true"]::after{transform:scaleX(1)}
+@media (max-width:640px){.tabs{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-inline:-16px;padding-inline:16px}.tabs::-webkit-scrollbar{display:none}.tabs button{flex:none}}
 .tabpanel{animation:fade .45s var(--ease-out)}
 @keyframes fade{from{opacity:0;transform:translateY(6px)}}
-.dishes{list-style:none;margin:0;padding:0}
-.dishes li{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:4px 16px;padding:20px 0;border-bottom:1px solid var(--line)}
-.dish__name{font:600 1.35rem/1.25 var(--f-display)}
-.dish__note{color:var(--muted);font-size:.95rem}
-@media (max-width:860px){.menu__grid{grid-template-columns:1fr}}
+.menu__group + .menu__group{margin-top:44px}
+.menu__group-title{margin:0 0 8px;font:600 1.35rem/1.3 var(--f-display)}
+.items{list-style:none;margin:0;padding:0;columns:2 340px;column-gap:56px}
+.item{break-inside:avoid;padding:14px 0;border-bottom:1px solid var(--line)}
+.item__row{display:flex;align-items:baseline;gap:10px;margin:0}
+.item__name{font-weight:500;font-size:1.02rem}
+.item__row::after{content:"";order:1;flex:1;min-width:20px;border-bottom:1px dotted var(--line-strong);transform:translateY(-4px)}
+.item__price{order:2;font-weight:700;font-variant-numeric:tabular-nums}
+.item__desc{margin:4px 0 0;color:var(--muted);font-size:.9rem;line-height:1.5;max-width:52ch}
+.raw{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--accent);margin-left:8px;vertical-align:middle}
+.menu__note .raw{margin:0 2px 0 0}
+.menu__advisory{margin:40px 0 0;font-size:.8rem;color:var(--muted);max-width:70ch}
 
 /* Food reel: photos glide left to right in a seamless loop */
 .reel{padding-block:clamp(56px,8vw,96px) 0}

@@ -50,4 +50,7 @@ Live preview link: https://claude.ai/artifact/MMwJLygHTGuRkTasgnw4iZ (private un
 
 - `site/index.html` + `site/assets/` : plain HTML/CSS/vanilla JS, no build step (per the 10k-websites skill).
   `reviews.css` holds the design tokens, `site.css` the sections, `main.js` hero fallback/tabs/hours, `reviews.js` the review data and belt.
+- Menu: the full à la carte menu lives in `scripts/menu_data.py` (transcribed from the printed menu).
+  Edit it there, then run `python3 scripts/build_menu.py` to regenerate the menu section in `site/index.html`.
+  "THE MENU" heading uses Dela Gothic One. The "How it works" section was removed at the user's request.
 - `10k-websites-skill (1).zip` : design skill used for critique and build standards. Keep it out of `site/`.
