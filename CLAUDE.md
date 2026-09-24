@@ -33,7 +33,7 @@ Live preview link: https://claude.ai/artifact/MMwJLygHTGuRkTasgnw4iZ (private un
 - À la carte menu (image supplied by the user): matches menutoeat.com's April 2026 copy (Honeymoon $16, Salmon Roll $6,
   California $6.50, Miso $3, Takoyaki $9, Rainbow $14) except Dragon Roll ($14 on the menu image, $18 online).
   DoorDash prices run about 25% higher (Old Keene Mill Roll $18.75 vs $15), which is normal delivery markup.
-- Food reel photos (`site/assets/photos/*-roll.jpg`, `nigiri-*.jpg`) were supplied by the user, 348px, likely from Yelp:
+- Food reel photos (8 in `site/assets/photos/`: *-roll, nigiri-*, sashimi-*, sushi-platter) were supplied by the user, 348px, likely from Yelp:
   confirm the owner has permission from the photographers before launch.
 
 ## Design direction (current)

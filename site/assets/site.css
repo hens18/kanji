@@ -126,7 +126,7 @@ a{color:inherit}
 .reel__viewport{display:flex;overflow:hidden;
   -webkit-mask:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
 .reel__track{list-style:none;margin:0;padding:0 10px 0 0;display:flex;gap:20px;flex:none;
-  animation:reel 40s linear infinite;animation-play-state:paused}
+  animation:reel 70s linear infinite;animation-play-state:paused}
 .reel.is-on .reel__track{animation-play-state:running}
 .reel__viewport:hover .reel__track{animation-play-state:paused}
 @keyframes reel{from{transform:translateX(-100%)}to{transform:translateX(0)}}
