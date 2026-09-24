@@ -10,6 +10,8 @@ After EVERY commit (and push), publish the current site as the live preview and 
 1. `node scripts/build-preview.js` (bundles `site/` into `.preview/index.html`)
 2. Publish `.preview/index.html` with the Artifact tool. Reuse the same URL every time:
    pass `url` = the live link below so it updates in place instead of creating a new one.
+   Images are not inlined: pass every image under `site/assets/` in `files`,
+   e.g. {"assets/hero.jpg": "site/assets/hero.jpg", "assets/photos/rolls.jpg": "site/assets/photos/rolls.jpg", ...}.
 3. End the reply with the live link.
 
 Live preview link: https://claude.ai/artifact/MMwJLygHTGuRkTasgnw4iZ (private until shared from its Share menu)
