@@ -120,6 +120,21 @@ a{color:inherit}
 .dish__note{color:var(--muted);font-size:.95rem}
 @media (max-width:860px){.menu__grid{grid-template-columns:1fr}}
 
+/* Food reel: photos glide left to right in a seamless loop */
+.reel{padding-block:clamp(56px,8vw,96px) 0}
+.reel__head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:28px}
+.reel__head .h2{margin:0}
+.reel__viewport{display:flex;overflow:hidden;
+  -webkit-mask:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.reel__track{list-style:none;margin:0;padding:0 10px 0 0;display:flex;gap:20px;flex:none;
+  animation:reel 40s linear infinite;animation-play-state:paused}
+.reel.is-on .reel__track{animation-play-state:running}
+.reel__viewport:hover .reel__track{animation-play-state:paused}
+@keyframes reel{from{transform:translateX(-100%)}to{transform:translateX(0)}}
+.reel figure{margin:0;width:clamp(200px,22vw,264px)}
+.reel img{width:100%;height:auto;aspect-ratio:1;object-fit:cover;border-radius:12px;background:var(--panel)}
+.reel figcaption{margin-top:10px;font-size:.92rem;color:var(--muted)}
+
 /* Pricing */
 .pricing{padding-block:clamp(64px,9vw,112px)}
 .pricing__grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,6vw,96px);align-items:start}
