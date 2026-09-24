@@ -1,154 +1,47 @@
-:root{
-  --canvas:#121c26;        /* ai-zome indigo, tinted, never pure black */
-  --panel:#1a2733;
-  --panel-raised:#213141;
-  --accent:#f2886a;        /* salmon nigiri: CTA, focus, rare emphasis */
-  --accent-hover:#ff9e82;
-  --accent-muted:rgba(242,136,106,.18);
-  --text-primary:#f1ece2;  /* rice */
-  --text-secondary:#a9b4bf;
-  --line:#3a4d60;          /* interactive borders, 3:1+ on panel */
-  --plate-salmon:#f2886a;
-  --plate-wasabi:#9cc27a;
-  --plate-tamago:#e8c55a;
-  --plate-maguro:#d9546a;
-  --plate-ebi:#7fb6d9;
-  --ease-out:cubic-bezier(.22,1,.36,1);
-  --ease-soft:cubic-bezier(.45,0,.2,1);
-  --f-display:"Dela Gothic One", "Zen Kaku Gothic New", system-ui, sans-serif;
-  --f-body:"Zen Kaku Gothic New", system-ui, sans-serif;
-  --f-mono:"DM Mono", ui-monospace, monospace;
-}
+/* Reviews carousel, minimal. Tokens come from site.css. */
+.reviews{padding-block:clamp(64px,9vw,112px)}
+.reviews__head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:32px}
+.reviews__head .h2{margin-bottom:6px}
+.reviews__head p{margin:0}
+.belt__controls{display:flex;align-items:center;gap:8px}
+.icon-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-width:44px;height:44px;padding:0 12px;border-radius:8px;
+  border:1px solid var(--line-strong);background:transparent;color:var(--ink);cursor:pointer;font:500 .9rem/1 var(--f-body);
+  transition:border-color .3s var(--ease-soft),background-color .3s var(--ease-soft)}
+.icon-btn:hover{border-color:var(--ink);background:var(--panel)}
+.icon-btn svg{width:18px;height:18px}
+.icon-btn[aria-pressed="true"]{border-color:var(--accent);color:var(--accent)}
 
-*,*::before,*::after{box-sizing:border-box}
-html,body{overflow-x:hidden;overflow-x:clip}
-body{
-  margin:0;background:var(--canvas);color:var(--text-primary);
-  font:400 1rem/1.6 var(--f-body);-webkit-font-smoothing:antialiased;
-}
-.skip{position:absolute;left:16px;top:-60px;padding:10px 14px;background:var(--accent);color:var(--canvas);border-radius:8px;z-index:10;transition:top .3s var(--ease-out)}
-.skip:focus{top:16px}
-:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
-
-/* ---------- Section ---------- */
-.reviews{padding:clamp(64px,10vw,128px) 0 clamp(56px,8vw,104px);position:relative}
-.reviews__head{
-  width:min(1160px,100% - 32px);margin:0 auto 40px;
-  display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:24px;
-}
-.reviews__kicker{font:500 .8rem/1 var(--f-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--text-secondary);margin:0 0 14px}
-.reviews__title{font:400 clamp(2rem,5.2vw,3.6rem)/1.05 var(--f-display);margin:0;max-width:16ch;letter-spacing:-.01em}
-.reviews__title em{font-style:normal;color:var(--accent)}
-.reviews__lede{color:var(--text-secondary);margin:14px 0 0;max-width:46ch}
-
-.belt__controls{display:flex;align-items:center;gap:10px}
-.btn{
-  font:500 .85rem/1 var(--f-mono);letter-spacing:.04em;color:var(--text-primary);
-  background:var(--panel);border:1px solid var(--line);border-radius:999px;
-  height:44px;min-width:44px;padding:0 16px;cursor:pointer;
-  display:inline-flex;align-items:center;justify-content:center;gap:8px;
-  transition:background-color .3s var(--ease-soft),border-color .3s var(--ease-soft),transform .3s var(--ease-out);
-}
-.btn:hover{background:var(--panel-raised);border-color:var(--text-secondary)}
-.btn:active{transform:scale(.96)}
-.btn svg{width:18px;height:18px}
-.btn[aria-pressed="true"]{border-color:var(--accent);color:var(--accent)}
-
-/* ---------- The belt (signature: reviews ride in like plates on the kaiten line) ---------- */
-.belt{position:relative}
-.belt__track{
-  list-style:none;margin:0;padding:8px max(16px,(100% - 1160px)/2) 36px;
-  display:flex;gap:20px;align-items:flex-start;
-  overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:max(16px,(100% - 1160px)/2);
-  scrollbar-width:none;
-}
+.belt__track{list-style:none;margin:0;padding:4px max(16px,(100% - 1200px)/2) 8px;display:flex;gap:20px;align-items:stretch;
+  overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:max(16px,(100% - 1200px)/2);scrollbar-width:none}
 .belt__track::-webkit-scrollbar{display:none}
-.belt__rail{
-  position:absolute;left:0;right:0;bottom:14px;height:6px;pointer-events:none;
-  background:repeating-linear-gradient(90deg,var(--line) 0 18px,transparent 18px 30px);
-  opacity:.55;
-  -webkit-mask:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
-          mask:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
-}
-.reviews.in.is-running .belt__rail{animation:belt 1.6s linear infinite;animation-delay:-.4s}
-@keyframes belt{to{background-position:30px 0}}
 
-.plate{
-  flex:0 0 min(380px,86vw);scroll-snap-align:start;
-  opacity:0;transform:translateX(48px);
-  transition:opacity .7s var(--ease-out),transform .9s var(--ease-out);
-  transition-delay:calc(var(--i) * 110ms);
-}
+.plate{flex:0 0 min(400px,86vw);scroll-snap-align:start;display:flex;
+  opacity:0;transform:translateY(16px);transition:opacity .7s var(--ease-out),transform .8s var(--ease-out);transition-delay:calc(var(--i) * 90ms)}
 .reviews.in .plate{opacity:1;transform:none}
 .reviews.in .plate.is-settled{transition-delay:0s}
 
-.plate__card{
-  --plate:var(--plate-salmon);
-  position:relative;background:var(--panel);border-radius:22px;padding:26px 24px 22px;
-  border:1px solid rgba(255,255,255,.05);
-  transition:transform .45s var(--ease-out),background-color .45s var(--ease-soft);
-}
-.plate[data-plate="wasabi"] .plate__card{--plate:var(--plate-wasabi)}
-.plate[data-plate="tamago"] .plate__card{--plate:var(--plate-tamago)}
-.plate[data-plate="maguro"] .plate__card{--plate:var(--plate-maguro)}
-.plate[data-plate="ebi"]    .plate__card{--plate:var(--plate-ebi)}
-.plate__card::before{ /* the plate's colored rim, like kaiten price plates */
-  content:"";position:absolute;inset:0 22px auto;height:4px;border-radius:0 0 4px 4px;background:var(--plate);
-}
-.plate__card:hover{transform:translateY(-4px);background:var(--panel-raised)}
-
+.plate__card{flex:1;display:flex;flex-direction:column;background:var(--canvas);border:1px solid var(--line);border-radius:12px;padding:28px}
 .plate__head{display:flex;align-items:center;gap:14px}
-.plate__dish{
-  flex:none;width:48px;height:48px;border-radius:50%;
-  display:grid;place-items:center;font:500 .85rem/1 var(--f-mono);color:var(--canvas);
-  background:radial-gradient(circle at 50% 50%,var(--text-primary) 0 44%,var(--plate) 45% 100%);
-}
-.plate__name{font:700 1.05rem/1.2 var(--f-body);margin:0}
-.plate__badge{font:500 .68rem/1 var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--plate);vertical-align:2px;margin-left:4px}
-.plate__place{margin:2px 0 0;color:var(--text-secondary);font-size:.9rem}
-
-.plate__meta{display:flex;align-items:baseline;gap:12px;margin:18px 0 0;font:400 .8rem/1 var(--f-mono);color:var(--text-secondary)}
-.stars{display:inline-flex;gap:3px}
+.plate__dish{flex:none;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--panel);font:600 .85rem/1 var(--f-body);color:var(--ink)}
+.plate__name{margin:0;font:700 1.02rem/1.2 var(--f-body)}
+.plate__badge{font-size:.72rem;font-weight:500;color:var(--accent);margin-left:6px;vertical-align:1px}
+.plate__place{margin:2px 0 0;color:var(--muted);font-size:.9rem}
+.plate__meta{display:flex;align-items:baseline;gap:12px;margin:18px 0 0;color:var(--muted);font-size:.85rem}
+.stars{display:inline-flex;gap:2px}
 .star{width:14px;height:14px;background:var(--line);clip-path:polygon(50% 0,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)}
-.star--on{background:var(--plate-tamago)}
-
-.plate__quote{margin:16px 0 0}
-.plate__pull{font:400 1.3rem/1.25 var(--f-display);margin:0 0 12px;max-width:22ch}
-.plate__body{
-  color:var(--text-secondary);font-size:.95rem;
-  display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:5;overflow:hidden;
-}
-.plate__body p{margin:0 0 .8em;max-width:60ch}
+.star--on{background:var(--star)}
+.plate__quote{margin:14px 0 0;flex:1}
+.plate__pull{margin:0 0 10px;font:600 1.3rem/1.35 var(--f-display);max-width:24ch}
+.plate__body{color:var(--muted);font-size:.95rem;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:4;overflow:hidden}
+.plate__body p{margin:0 0 .8em}
 .plate__body p:last-child{margin-bottom:0}
 .is-open .plate__body{display:block;overflow:visible}
-.plate__more{
-  margin-top:14px;padding:10px 0;min-height:44px;background:none;border:0;cursor:pointer;
-  font:500 .8rem/1 var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--accent);
-  transition:color .3s var(--ease-soft);
-}
+.plate__more{align-self:flex-start;margin-top:12px;min-height:44px;padding:0;background:none;border:0;cursor:pointer;
+  font:500 .92rem/1 var(--f-body);color:var(--accent);text-decoration:underline;text-underline-offset:4px}
 .plate__more:hover{color:var(--accent-hover)}
-
-.reviews__foot{width:min(1160px,100% - 32px);margin:28px auto 0;display:flex;flex-wrap:wrap;align-items:baseline;gap:16px 28px}
-.reviews__cta{
-  font:500 .9rem/1 var(--f-mono);letter-spacing:.04em;text-decoration:none;color:var(--canvas);
-  background:var(--accent);border-radius:999px;height:48px;padding:0 24px;
-  display:inline-flex;align-items:center;justify-content:center;
-  transition:background-color .3s var(--ease-soft),transform .3s var(--ease-out);
-}
-.reviews__cta:hover{background:var(--accent-hover);transform:translateY(-2px)}
-.reviews__src{color:var(--text-secondary);font-size:.9rem;margin:0}
-.reviews__src a{color:var(--text-primary);text-underline-offset:3px}
-
-.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-
-
-@media (max-width:640px){
-  .belt__controls{width:100%}
-  .plate__pull{font-size:1.15rem}
-}
+.reviews__foot{margin-top:28px}
 
 @media (prefers-reduced-motion:reduce){
-  *,*::before,*::after{animation:none!important;transition:none!important;transition-delay:0s!important}
   .plate{opacity:1;transform:none}
   [data-belt-pause]{display:none}
 }

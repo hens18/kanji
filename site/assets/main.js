@@ -1,68 +1,15 @@
 (() => {
   const reduced = matchMedia("(prefers-reduced-motion: reduce)");
-  const NAMES = { salmon: "Salmon nigiri", maguro: "Tuna nigiri", tamago: "Tamago nigiri", ebi: "Shrimp nigiri" };
 
   // Pause every loop on hidden tabs.
   document.addEventListener("visibilitychange", () => document.body.classList.toggle("paused", document.hidden));
 
-  /* ---------- The line: conveyor belt + shuttle ---------- */
-  const line = document.querySelector(".line");
-  if (line) {
-    const belt = line.querySelector("[data-conveyor]");
-    const order = [["salmon", "salmon"], ["tamago", "tamago"], ["maguro", "maguro"], ["ebi", "ebi"], ["salmon", "wasabi"], ["maguro", "tamago"]];
-    // Two identical runs so the belt loops without a seam.
-    for (let r = 0; r < 2; r++) {
-      order.forEach(([fish, plate]) => {
-        const p = document.createElement("span");
-        p.className = "cplate";
-        p.style.setProperty("--plate", `var(--plate-${plate})`);
-        const n = document.createElement("span");
-        n.className = "nigiri";
-        n.dataset.fish = fish;
-        p.append(n);
-        belt.append(p);
-      });
-    }
-    new IntersectionObserver(([e]) => line.classList.toggle("is-on", e.isIntersecting)).observe(line);
-
-    const shuttle = line.querySelector("[data-shuttle]");
-    const dish = line.querySelector("[data-shuttle-dish]");
-    const send = line.querySelector("[data-send]");
-    const status = line.querySelector("[data-send-status]");
-    const rail = line.querySelector(".rail");
-    const setRun = () => shuttle.style.setProperty("--run", `${rail.clientWidth - shuttle.offsetWidth}px`);
-    setRun();
-    addEventListener("resize", setRun);
-
-    const current = () => line.querySelector('input[name="fish"]:checked').value;
-    line.querySelectorAll('input[name="fish"]').forEach(i =>
-      i.addEventListener("change", () => { if (!send.disabled) dish.dataset.fish = current(); }));
-
-    const wait = ms => new Promise(r => setTimeout(r, reduced.matches ? 0 : ms));
-    const arrive = () => new Promise(res => {
-      if (reduced.matches) return res();
-      const done = e => { if (e.propertyName === "transform") { shuttle.removeEventListener("transitionend", done); res(); } };
-      shuttle.addEventListener("transitionend", done);
-    });
-
-    send.addEventListener("click", async () => {
-      const fish = current();
-      dish.dataset.fish = fish;
-      send.disabled = true;
-      status.textContent = `${NAMES[fish]} is on its way...`;
-      setRun();
-      const there = arrive();
-      shuttle.classList.add("is-there");
-      await there;
-      status.textContent = `${NAMES[fish]}, delivered. Every order you place arrives just like this.`;
-      await wait(1400);
-      shuttle.style.visibility = "hidden"; // plate "lifted off" at the table
-      shuttle.classList.remove("is-there");
-      await wait(1500);
-      shuttle.style.visibility = "";
-      send.disabled = false;
-      send.textContent = "Send another";
-    });
+  /* ---------- Hero photo: fall back to the dark gradient if it is missing ---------- */
+  const heroImg = document.querySelector("[data-hero-img]");
+  if (heroImg) {
+    const hide = () => { heroImg.hidden = true; };
+    heroImg.addEventListener("error", hide);
+    if (heroImg.complete && !heroImg.naturalWidth) hide();
   }
 
   /* ---------- Menu tabs (ARIA tabs pattern) ---------- */

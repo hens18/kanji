@@ -202,7 +202,7 @@ const REVIEWS = [
   pauseBtn.addEventListener("click", () => {
     hold.user = !hold.user;
     pauseBtn.setAttribute("aria-pressed", String(hold.user));
-    pauseBtn.querySelector("span").textContent = hold.user ? "Play belt" : "Pause belt";
+    pauseBtn.querySelector("span").textContent = hold.user ? "Play" : "Pause";
     status.textContent = hold.user ? "Belt paused" : "Belt moving";
     sync();
   });

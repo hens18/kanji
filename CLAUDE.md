@@ -24,6 +24,16 @@ Live preview link: https://claude.ai/artifact/MMwJLygHTGuRkTasgnw4iZ (private un
 - NEEDS OWNER CONFIRMATION: AYCE prices ($30 adult, $15 kids 7-11, $12 kids 4-6, 3 and under free)
   and the 90-minute seating limit come from a 2024 TikTok, not the restaurant.
 
+## Design direction (current)
+
+- Minimal sushi-restaurant look, modeled on Nobu Miami, Tanuki Miami and Yume Sushi Bar: plain white nav,
+  full-bleed hero photo/video with headline bottom-left, clean light sections, one deep red accent.
+- Hero: a photo from kanjispringfield.com for now (`site/assets/hero.jpg`).
+- Planned hero video (Higgsfield): a PLAIN SALMON ROLL only, no other fillings, sliced with a Japanese
+  yanagiba in one long horizontal pulling stroke (never a straight-down chop). Start frame must use
+  `quality: "high"`, `resolution: "2k"`; the default low/1k frame caused the grainy rice.
+  Video: kling3_0, mode pro, sound off, 5s (8.75 credits). Check the balance first.
+
 ## Layout
 
 - `site/index.html` + `site/assets/` : plain HTML/CSS/vanilla JS, no build step (per the 10k-websites skill).
