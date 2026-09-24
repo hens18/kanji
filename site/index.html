@@ -2,19 +2,201 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Kanji Sushi AYCE, Springfield VA</title>
-  <meta name="description" content="All-you-can-eat sushi and hibachi in Springfield, VA, delivered to your table by train. Read what our guests say.">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Kanji Sushi &amp; Bar Springfield</title>
+  <meta name="description" content="All-you-can-eat sushi, sashimi and hibachi in Springfield, VA. Order anything and a little shuttle train brings it to your table.">
   <meta name="theme-color" content="#121c26">
+  <!-- DEPLOY STEP: add og:url and og:image with absolute URLs once the live domain is set -->
+  <meta property="og:title" content="Kanji Sushi &amp; Bar Springfield">
+  <meta property="og:description" content="All-you-can-eat sushi, delivered to your table by train.">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%23f2886a'/%3E%3Ccircle cx='16' cy='16' r='8' fill='%23f1ece2'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@500&family=Dela+Gothic+One&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/reviews.css">
+  <link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
+
+  <header class="nav" id="top">
+    <div class="nav__inner">
+      <a class="brand" href="#top" aria-label="Kanji Sushi &amp; Bar, back to top">
+        <span class="brand__mark" aria-hidden="true">漢字</span>
+        <span class="brand__word">Kanji</span>
+      </a>
+      <nav class="nav__links" aria-label="Main">
+        <a href="#how">How it works</a>
+        <a href="#menu">Menu</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#visit">Visit</a>
+      </nav>
+      <div class="nav__actions">
+        <a class="nav__call" href="tel:+17035631078">(703) 563-1078</a>
+        <a class="nav__order" href="https://www.kanjispringfield.com/" target="_blank" rel="noopener">Order online</a>
+      </div>
+    </div>
+  </header>
+
   <main id="main" tabindex="-1">
+
+    <!-- Hero: the interactive moment. Pick a piece, send the shuttle. -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero__copy">
+        <p class="kicker">Springfield, VA · All you can eat</p>
+        <h1 class="hero__title" id="hero-title">Sushi on the belt. <em>Your order on the train.</em></h1>
+        <p class="hero__lede">Made-to-order sushi, sashimi and hibachi, as much as you want. Order from your server and a little shuttle brings it straight to your table.</p>
+        <div class="hero__ctas">
+          <a class="btn-primary" href="#visit">Plan your visit</a>
+          <a class="btn-ghost" href="https://www.kanjispringfield.com/" target="_blank" rel="noopener">Order online</a>
+        </div>
+        <ul class="hero__facts">
+          <li><strong>$30</strong> adults</li>
+          <li><strong>$12</strong> kids from</li>
+          <li><strong>Noon</strong> open daily</li>
+        </ul>
+      </div>
+
+      <div class="line" aria-labelledby="line-title">
+        <div class="line__top">
+          <p class="line__label" id="line-title">Try it: send an order</p>
+          <fieldset class="picker">
+            <legend class="sr-only">Pick a piece</legend>
+            <label><input type="radio" name="fish" value="salmon" id="fish-salmon" checked><span>Salmon</span></label>
+            <label><input type="radio" name="fish" value="maguro" id="fish-maguro"><span>Tuna</span></label>
+            <label><input type="radio" name="fish" value="tamago" id="fish-tamago"><span>Tamago</span></label>
+            <label><input type="radio" name="fish" value="ebi" id="fish-ebi"><span>Shrimp</span></label>
+          </fieldset>
+        </div>
+
+        <div class="line__stage" aria-hidden="true">
+          <div class="rail">
+            <span class="rail__kitchen">Kitchen</span>
+            <div class="rail__track"></div>
+            <div class="shuttle" data-shuttle>
+              <span class="shuttle__tray"><span class="nigiri" data-fish="salmon" data-shuttle-dish></span></span>
+              <span class="shuttle__body"></span>
+            </div>
+            <span class="rail__table">Your table</span>
+          </div>
+          <div class="conveyor">
+            <div class="conveyor__plates" data-conveyor></div>
+          </div>
+        </div>
+
+        <div class="line__bottom">
+          <button class="btn-primary line__send" type="button" data-send>Send it to my table</button>
+          <p class="line__status" role="status" data-send-status>Top rail: your orders. Bottom belt: light bites to grab.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works: a real sequence, so numbered -->
+    <section class="how" id="how" aria-labelledby="how-title">
+      <div class="wrap">
+        <p class="kicker">How a visit works</p>
+        <h2 class="h2" id="how-title">Four steps. Then repeat step three.</h2>
+        <ol class="steps">
+          <li class="step">
+            <span class="step__n">1</span>
+            <h3>Grab a seat</h3>
+            <p>Booth or bar. Tell your server you are going all you can eat, or order à la carte.</p>
+          </li>
+          <li class="step">
+            <span class="step__n">2</span>
+            <h3>Graze the belt</h3>
+            <p>Light bites roll past on the conveyor. Take whatever looks good.</p>
+          </li>
+          <li class="step">
+            <span class="step__n">3</span>
+            <h3>Order anything</h3>
+            <p>Rolls, nigiri, hibachi, takoyaki. Ask your server each round, as much as you like.</p>
+          </li>
+          <li class="step">
+            <span class="step__n">4</span>
+            <h3>Watch it arrive</h3>
+            <p>Your order rides the shuttle rail, made fresh, straight to your table.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Menu: tabs -->
+    <section class="menu" id="menu" aria-labelledby="menu-title">
+      <div class="wrap menu__grid">
+        <div class="menu__intro">
+          <p class="kicker">What's on the line</p>
+          <h2 class="h2" id="menu-title">The whole menu is on the table.</h2>
+          <p class="muted">Sushi bar, kitchen and hibachi grill, all inside one all-you-can-eat price. The full menu is at the restaurant and changes with the season.</p>
+        </div>
+        <div class="menu__panel">
+          <div class="tabs" role="tablist" aria-label="Menu categories">
+            <button role="tab" id="tab-sushi" aria-controls="panel-sushi" aria-selected="true">Sushi &amp; rolls</button>
+            <button role="tab" id="tab-sashimi" aria-controls="panel-sashimi" aria-selected="false" tabindex="-1">Sashimi</button>
+            <button role="tab" id="tab-hibachi" aria-controls="panel-hibachi" aria-selected="false" tabindex="-1">Hibachi &amp; kitchen</button>
+            <button role="tab" id="tab-small" aria-controls="panel-small" aria-selected="false" tabindex="-1">Small plates</button>
+          </div>
+          <div class="tabpanel" role="tabpanel" id="panel-sushi" aria-labelledby="tab-sushi" tabindex="0">
+            <ul class="dishes">
+              <li><span class="dish__name">Nigiri</span><span class="dish__note">Salmon, tuna, tamago, shrimp and more, made to order</span></li>
+              <li><span class="dish__name">Crunchy salmon roll</span><span class="dish__note">A regular favorite</span></li>
+              <li><span class="dish__name">Hand rolls</span><span class="dish__note">Rolled fresh when you order</span></li>
+              <li><span class="dish__name">Classic and house rolls</span><span class="dish__note">The standards, done right</span></li>
+            </ul>
+          </div>
+          <div class="tabpanel" role="tabpanel" id="panel-sashimi" aria-labelledby="tab-sashimi" tabindex="0" hidden>
+            <ul class="dishes">
+              <li><span class="dish__name">Sashimi sampler</span><span class="dish__note">One per guest, included with all you can eat</span></li>
+              <li><span class="dish__name">Extra sashimi</span><span class="dish__note">Order more for a small surcharge</span></li>
+              <li><span class="dish__name">Sliced fish with jalapeño</span><span class="dish__note">Thin cuts with jalapeño and radish</span></li>
+            </ul>
+          </div>
+          <div class="tabpanel" role="tabpanel" id="panel-hibachi" aria-labelledby="tab-hibachi" tabindex="0" hidden>
+            <ul class="dishes">
+              <li><span class="dish__name">Hibachi</span><span class="dish__note">Tender grilled meats off the flat-top</span></li>
+              <li><span class="dish__name">Teriyaki</span><span class="dish__note">Glazed and grilled</span></li>
+              <li><span class="dish__name">Tempura</span><span class="dish__note">Light, crisp batter</span></li>
+              <li><span class="dish__name">Noodles</span><span class="dish__note">Hot bowls from the kitchen</span></li>
+            </ul>
+          </div>
+          <div class="tabpanel" role="tabpanel" id="panel-small" aria-labelledby="tab-small" tabindex="0" hidden>
+            <ul class="dishes">
+              <li><span class="dish__name">Takoyaki</span><span class="dish__note">Yes, they have takoyaki</span></li>
+              <li><span class="dish__name">Appetizers</span><span class="dish__note">A full list to start with</span></li>
+              <li><span class="dish__name">Belt bites</span><span class="dish__note">Grab from the conveyor anytime</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing: the ticket -->
+    <section class="pricing" id="pricing" aria-labelledby="pricing-title">
+      <div class="wrap pricing__grid">
+        <div class="ticket">
+          <p class="ticket__head"><span>All you can eat</span><span>Per guest</span></p>
+          <dl class="ticket__rows">
+            <div class="ticket__row" data-plate="salmon"><dt>Adults</dt><dd>$30</dd></div>
+            <div class="ticket__row" data-plate="wasabi"><dt>Kids 7 to 11</dt><dd>$15</dd></div>
+            <div class="ticket__row" data-plate="tamago"><dt>Kids 4 to 6</dt><dd>$12</dd></div>
+            <div class="ticket__row" data-plate="ebi"><dt>3 and under</dt><dd>Free</dd></div>
+          </dl>
+          <p class="ticket__foot">90-minute seating · Tax and tip not included</p>
+        </div>
+        <div class="pricing__copy">
+          <p class="kicker">Pricing</p>
+          <h2 class="h2" id="pricing-title">One price. Order until you're done.</h2>
+          <ul class="checks">
+            <li>Sushi, rolls, hibachi and kitchen dishes all included</li>
+            <li>A sashimi sampler for every guest, once</li>
+            <li>Extra sashimi has a small surcharge</li>
+            <li>Just want a few things? À la carte works too</li>
+          </ul>
+          <a class="btn-primary" href="tel:+17035631078">Call to book a table</a>
+        </div>
+      </div>
+    </section>
 
     <section class="reviews" id="reviews" aria-labelledby="reviews-title">
       <div class="reviews__head">
@@ -49,7 +231,67 @@
       </div>
     </section>
 
+    <!-- Visit -->
+    <section class="visit" id="visit" aria-labelledby="visit-title">
+      <div class="wrap visit__grid">
+        <div class="visit__main">
+          <p class="kicker">Visit</p>
+          <h2 class="h2" id="visit-title">Come hungry.</h2>
+          <address class="visit__addr">
+            8430-A Old Keene Mill Rd<br>
+            Springfield, VA 22152<br>
+            <span class="muted">Old Keene Mill Shopping Center</span>
+          </address>
+          <p class="visit__phone"><a href="tel:+17035631078">(703) 563-1078</a></p>
+          <div class="visit__ctas">
+            <a class="btn-primary" href="https://www.google.com/maps/search/?api=1&amp;query=Kanji+Sushi+AYCE+8430-A+Old+Keene+Mill+Rd+Springfield+VA+22152" target="_blank" rel="noopener">Get directions</a>
+            <a class="btn-ghost" href="tel:+17035631078">Call us</a>
+          </div>
+        </div>
+        <div class="hours">
+          <div class="hours__head">
+            <h3>Hours</h3>
+            <span class="pill" data-open-pill>Open daily from noon</span>
+          </div>
+          <table class="hours__table">
+            <caption class="sr-only">Opening hours</caption>
+            <tbody data-hours></tbody>
+          </table>
+          <p class="muted hours__note">Kitchen hours can change on holidays. Call ahead for big groups.</p>
+        </div>
+      </div>
+    </section>
+
   </main>
+
+  <footer class="footer" aria-labelledby="follow-title">
+    <div class="wrap">
+      <div class="footer__follow">
+        <h2 class="h2" id="follow-title">Follow the line.</h2>
+        <p class="muted">New rolls, belt specials and the occasional train video.</p>
+      </div>
+      <ul class="socials">
+        <li><a class="social" href="https://www.instagram.com/kanjisushiandbar_springfield/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          <span><strong>Instagram</strong><small>@kanjisushiandbar_springfield</small></span></a></li>
+        <li><a class="social" href="https://www.facebook.com/p/Kanji-Sushi-Bar-Springfield-61564008883723/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9v2.3H7.9v3h2.6V21z"/></svg>
+          <span><strong>Facebook</strong><small>Kanji Sushi &amp; Bar Springfield</small></span></a></li>
+        <li><a class="social" href="https://www.yelp.com/biz/kanji-sushi-ayce-west-springfield" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5-4.8-4.6 6.6-.9z"/></svg>
+          <span><strong>Yelp</strong><small>Read and leave reviews</small></span></a></li>
+        <li><a class="social" href="https://www.snapchat.com/place/kanjisushiaycespringfield/e7c54f6e-836b-11ef-8bb4-b3cc204cc48a" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c3 0 5 2.2 5 5.2v2.3l1.8-.5c.6 0 .8.7.3 1l-2 1.1c.6 1.7 1.9 3 3.6 3.5-.4.9-1.8 1.2-2.7 1.3l-.4 1.3c-1.3-.3-2.5-.1-3.5.7-1.3 1-2.9 1-4.2 0-1-.8-2.2-1-3.5-.7l-.4-1.3c-.9-.1-2.3-.4-2.7-1.3 1.7-.5 3-1.8 3.6-3.5l-2-1.1c-.5-.3-.3-1 .3-1l1.8.5V8.2C7 5.2 9 3 12 3z"/></svg>
+          <span><strong>Snapchat</strong><small>Kanji Sushi AYCE place page</small></span></a></li>
+      </ul>
+      <div class="footer__base">
+        <p><span class="brand__mark" aria-hidden="true">漢字</span> Kanji Sushi &amp; Bar · 8430-A Old Keene Mill Rd, Springfield, VA 22152</p>
+        <p class="muted">© 2026 Kanji Sushi &amp; Bar (Springfield)</p>
+      </div>
+    </div>
+  </footer>
+
   <script src="assets/reviews.js"></script>
+  <script src="assets/main.js"></script>
 </body>
 </html>

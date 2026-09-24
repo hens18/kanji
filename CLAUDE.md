@@ -14,7 +14,18 @@ After EVERY commit (and push), publish the current site as the live preview and 
 
 Live preview link: https://claude.ai/artifact/MMwJLygHTGuRkTasgnw4iZ (private until shared from its Share menu)
 
+## Business facts
+
+- Name on their site: "Kanji Sushi & Bar (Springfield)". Yelp/Instagram use "Kanji Sushi AYCE".
+- 8430-A Old Keene Mill Rd, Springfield, VA 22152 · (703) 563-1078
+- Hours (from their site): Sun-Thu 12-10 PM, Fri-Sat 12-11 PM. Source of truth: `HOURS` in `site/assets/main.js`.
+- Order Online currently lives on the old site (Go3 Technology); the new site links there.
+- Socials: Instagram @kanjisushiandbar_springfield, Facebook, Yelp, Snapchat place page (links in footer).
+- NEEDS OWNER CONFIRMATION: AYCE prices ($30 adult, $15 kids 7-11, $12 kids 4-6, 3 and under free)
+  and the 90-minute seating limit come from a 2024 TikTok, not the restaurant.
+
 ## Layout
 
 - `site/index.html` + `site/assets/` : plain HTML/CSS/vanilla JS, no build step (per the 10k-websites skill).
+  `reviews.css` holds the design tokens, `site.css` the sections, `main.js` hero shuttle/tabs/hours, `reviews.js` the review data and belt.
 - `10k-websites-skill (1).zip` : design skill used for critique and build standards. Keep it out of `site/`.
