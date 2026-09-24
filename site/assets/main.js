@@ -19,12 +19,15 @@
     let visible = false, userPaused = false;
     const sync = () => reel.classList.toggle("is-on", visible && !userPaused && !reduced.matches);
     new IntersectionObserver(([e]) => { visible = e.isIntersecting; sync(); }).observe(reel);
-    btn.addEventListener("click", () => {
+    const toggle = () => {
       userPaused = !userPaused;
       btn.setAttribute("aria-pressed", String(userPaused));
       btn.querySelector("span").textContent = userPaused ? "Play" : "Pause";
       sync();
-    });
+    };
+    btn.addEventListener("click", toggle);
+    // Hovering only lifts a photo; clicking any photo stops or restarts the strip.
+    reel.querySelector(".reel__viewport").addEventListener("click", e => { if (e.target.closest("figure")) toggle(); });
     reduced.addEventListener("change", sync);
   }
 
