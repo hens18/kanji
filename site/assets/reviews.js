@@ -216,6 +216,9 @@ const REVIEWS = [
   document.addEventListener("visibilitychange", () => { hold.hidden = document.hidden; sync(); });
   reduced.addEventListener("change", sync);
 
+  // Already on screen at load: show the cards now rather than waiting on the observer.
+  if (section.getBoundingClientRect().top < innerHeight) section.classList.add("in");
+
   new IntersectionObserver(([entry]) => {
     if (entry.isIntersecting) section.classList.add("in");
     hold.offscreen = !entry.isIntersecting;
