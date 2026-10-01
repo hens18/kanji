@@ -16,6 +16,11 @@ After EVERY commit (and push), publish the current site as the live preview and 
 
 Live preview link: https://claude.ai/artifact/MMwJLygHTGuRkTasgnw4iZ (private until shared from its Share menu)
 
+## GitHub Pages
+
+- Public site: https://hens18.github.io/kanji/ , deployed by `.github/workflows/pages.yml` from the `site/` folder
+  on every push to `main`. Requires Settings > Pages > Source = "GitHub Actions" (one-time, done by the repo owner).
+
 ## Business facts
 
 - Name on their site: "Kanji Sushi & Bar (Springfield)". Yelp/Instagram use "Kanji Sushi AYCE".
